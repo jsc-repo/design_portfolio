@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Doum Suh' Portfolio</title>
+    <title>Jane Doe - Portfolio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -33,7 +33,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-10">
-            <h1>Hello.<br />I'm <span class="text-primary">Doum Suh</span>, a graphic and web <span class="text-primary">designer</span> living in New York</h1>
+            <h1>Hello.<br />I'm <span class="text-primary">Jane Doe</span>, a graphic and web <span class="text-primary">designer</span> living in New York</h1>
           </div>
         </div>
       </div>
@@ -52,13 +52,13 @@
 
       <div class="container-fluid">
         <div class="row no-space">
-              {% for i in images %}
-              {% if i.image %}
+          {% if images %}
+            {% for i in images %}
           <div class="col-md-4 col-xs-4">
-            <div class="box"><a href="{{ i.image.url }}" title="" data-toggle="lightbox" data-gallery="portfolio" data-title="{{i.title}}" data-footer="{{i.description}}"><img src="{{ i.image.url }}" alt="" class="img-responsive"></a></div>
+            <div class="box"><a href="{{ i.image.url }}" title="{{i.title}}" data-toggle="lightbox" data-gallery="portfolio" data-title="{{i.title}}" data-footer="{{i.description}}"><img src="{{ i.image.url }}" alt="{{i.title}}" class="img-responsive"></a></div>
         </div>
-              {% endif %}
-              {% endfor %}
+          {% endfor %}
+        {% endif %}
         </div>
       </div>
 
@@ -187,7 +187,7 @@
               <div class="col-md-6">
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                <p class="social"><a href="#" title="" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" title="" class="gplus"><i class="fa fa-google-plus"></i></a><a href="#" title="" class="instagram"><i class="fa fa-instagram"></i></a><a href="#" title="" class="email"><i class="fa fa-envelope"></i></a></p>
+                <p class="social"><a href="#" title="" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" title="" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" title="" class="instagram"><i class="fa fa-instagram"></i></a><a href="#" title="" class="email"><i class="fa fa-envelope"></i></a></p>
               </div>
             </div>
           </div>
@@ -205,11 +205,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <p>DSUH <i class="fa fa-copyright" aria-hidden="true"></i></p>
-            </div>
-            <div class="col-md-6">
-              <p class="credit pull-right"><a href="http://bootstrapious.com/landing-pages" class="external">Bootstrapious</a></p>
-              <!-- Please do not remove the backlink to us. It is part of the license conditions. Thanks for understanding :)-->
+              <p>JDOE <i class="fa fa-copyright" aria-hidden="true"></i></p>
             </div>
           </div>
         </div>
